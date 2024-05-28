@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Smartest Human in the World</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="favicon.jpg">
+</head>
+<body>
+    <h1 id="title">The smartest human in the world</h1>
+    <h3>Website by Casper</h3>
+    <div id="timers">
+        <div id="timer1" class="timer">
+            <textarea class="naam" id="name1">Naam 1</textarea>
+            <h1 id="time1" class="time">100</h1>
+        </div>
+        <div id="timer2" class="timer">
+            <textarea class="naam" id="name2">Naam 2</textarea>
+            <h1 id="time2" class="time">100</h1>
+        </div>
+        <div id="timer3" class="timer">
+            <textarea class="naam" id="name3">Naam 3</textarea>
+            <h1 id="time3" class="time">100</h1>
+        </div>
+    </div>
+    <div id="buttons">
+        <div id="buttons1" class="buttonbox">
+            <div class="startstop">
+                <button onclick="start(1)">Start</button>
+                <button onclick="stop(1)">Stop</button>
+            </div>
+            <div class="timechange">
+                <div class="changebuttons">
+                    <button onclick="add(1)">Add</button>
+                    <button onclick="remove(1)">Remove</button>
+                    <button onclick="set(1)">Set</button>
+                </div>
+                <input type="number" value="20" id="input1" min="0">
+            </div>
+        </div>
+        <div id="buttons2" class="buttonbox">
+            <div class="startstop">
+                <button onclick="start(2)">Start</button>
+                <button onclick="stop(2)">Stop</button>
+            </div>
+            <div class="timechange">
+                <div class="changebuttons">
+                    <button onclick="add(2)">Add</button>
+                    <button onclick="remove(2)">Remove</button>
+                    <button onclick="set(2)">Set</button>
+                </div>
+                <input type="number" value="20" id="input2" min="0">
+            </div>
+        </div>
+        <div id="buttons3" class="buttonbox">
+            <div class="startstop">
+                <button onclick="start(3)">Start</button>
+                <button onclick="stop(3)">Stop</button>
+            </div>
+            <div class="timechange">
+                <div class="changebuttons">
+                    <button onclick="add(3)">Add</button>
+                    <button onclick="remove(3)">Remove</button>
+                    <button onclick="set(3)">Set</button>
+                </div>
+                <input type="number" value="20" id="input3" min="0">
+            </div>
+        </div>
+    </div>
+    <script>
+        var time1 = 100;
+        var time2 = 100;
+        var time3 = 100;
+        var timer1 = false;
+        var timer2 = false;
+        var timer3 = false;
+        setInterval(function () {
+            if (timer1) --time1;
+            if (timer2) --time2;
+            if (timer3) --time3;
+            if (time1 <= 0) {
+                time1 = 0;
+                if (!document.getElementById("name1").value.includes("💀")) document.getElementById("name1").value += " 💀"
+                stop(1)
+            }
+            if (time2 <= 0) {
+                time2 = 0;
+                if (!document.getElementById("name2").value.includes("💀")) document.getElementById("name2").value += " 💀"
+                stop(2)
+            } 
+            if (time3 <= 0) {
+                time3 = 0;
+                if (!document.getElementById("name3").value.includes("💀")) document.getElementById("name3").value += " 💀"
+                stop(3)
+            } 
+            document.getElementById("time1").innerHTML = time1
+            document.getElementById("time2").innerHTML = time2
+            document.getElementById("time3").innerHTML = time3
+        }, 1000);
+
+        function start(id) {
+            if (id == 1) {
+                timer1 = true;
+                timer2 = false;
+                timer3 = false;
+                document.getElementById("time1").style.color = "black";
+                document.getElementById("time2").style.color = "white";
+                document.getElementById("time3").style.color = "white";
+            }
+            if (id == 2) {
+                timer1 = false;
+                timer2 = true;
+                timer3 = false;
+                document.getElementById("time1").style.color = "white";
+                document.getElementById("time2").style.color = "black";
+                document.getElementById("time3").style.color = "white";
+            }
+            if (id == 3) {
+                timer1 = false;
+                timer2 = false;
+                timer3 = true;
+                document.getElementById("time1").style.color = "white";
+                document.getElementById("time2").style.color = "white";
+                document.getElementById("time3").style.color = "black";
+            }
+            document.getElementById("time1").innerHTML = time1
+            document.getElementById("time2").innerHTML = time2
+            document.getElementById("time3").innerHTML = time3
+        }
+
+        function stop(id) {
+            if (id == 1) {
+                timer1 = false;
+                document.getElementById("time1").style.color = "white";
+            }
+            if (id == 2) {
+                timer2 = false;
+                document.getElementById("time2").style.color = "white";
+            }
+            if (id == 3) {
+                timer3 = false;
+                document.getElementById("time3").style.color = "white";
+            }
+            document.getElementById("time1").innerHTML = time1
+            document.getElementById("time2").innerHTML = time2
+            document.getElementById("time3").innerHTML = time3
+        }
+
+        function add(id) {
+            if (id == 1) {
+                time1 += parseInt(document.getElementById("input1").value)
+            }
+            if (id == 2) {
+                time2 += parseInt(document.getElementById("input2").value)
+            }
+            if (id == 3) {
+                time3 += parseInt(document.getElementById("input3").value)
+            }
+            document.getElementById("time1").innerHTML = time1
+            document.getElementById("time2").innerHTML = time2
+            document.getElementById("time3").innerHTML = time3
+        }
+
+        function remove(id) {
+            if (id == 1) {
+                time1 -= parseInt(document.getElementById("input1").value)
+            }
+            if (id == 2) {
+                time2 -= parseInt(document.getElementById("input2").value)
+            }
+            if (id == 3) {
+                time3 -= parseInt(document.getElementById("input3").value)
+            }
+            document.getElementById("time1").innerHTML = time1
+            document.getElementById("time2").innerHTML = time2
+            document.getElementById("time3").innerHTML = time3
+        }
+
+        function set(id) {
+            if (id == 1) {
+                time1 = parseInt(document.getElementById("input1").value)
+            }
+            if (id == 2) {
+                time2 = parseInt(document.getElementById("input2").value)
+            }
+            if (id == 3) {
+                time3 = parseInt(document.getElementById("input3").value)
+            }
+            document.getElementById("time1").innerHTML = time1
+            document.getElementById("time2").innerHTML = time2
+            document.getElementById("time3").innerHTML = time3
+        }
+    </script>
+</body>
+</html>

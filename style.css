@@ -1,0 +1,133 @@
+body {
+    font-family:Arial, Helvetica, sans-serif;
+    display:flex;
+    align-items:center;
+    justify-content: center;
+    flex-direction: column;
+    background-image: url(stoelen.jpg);
+    background-size:cover;
+}
+
+h1 {
+    text-align:center;
+    width:100%;
+}
+
+#timers {
+    width:80%;
+    height:200px;
+    display:flex;
+    flex-direction: row;
+}
+
+#buttons {
+    width:80%;
+    height:150px;
+    display:flex;
+    flex-direction: row;
+}
+
+.buttonbox {
+    width:33.333333333333333333333333%;
+    height:150px;
+    display:flex;
+    align-items:center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.timechange {
+    display:flex;
+    align-items:center;
+    justify-content: center;
+    flex-direction: row;
+    margin-top:10px;
+}
+
+.changebuttons {
+    display:flex;
+    align-items:center;
+    justify-content: center;
+    flex-direction: column;
+    margin-right:5px;
+}
+
+.changebuttons button {
+    width:75px;
+}
+
+.timechange input {
+    width:60px;
+    height:60px;
+    font-size:20px;
+}
+
+.timer {
+    width:33.333333333333333333333333%;
+    height:200px;
+    display:flex;
+    align-items:center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.naam {
+    width:95%;
+    overflow:hidden;
+    height:max-content;
+    font-size:40px;
+    text-align:center;
+    border:none;
+    resize:none;
+    background:none;
+    text-shadow: rgb(71, 71, 71) 3px 3px 2px;
+}
+
+.time {
+    font-size:400%;
+    margin-top:0;
+    width:250px;
+    text-shadow: rgb(255, 255, 255) 0px 0px 10px;
+    background: #CA1814;
+    border-radius: 50%;
+    color:white;
+}
+
+#title {
+    margin-bottom:-15px;
+}
+
+button {
+  background-color: #f8f9fa;
+  border: 1px solid #f8f9fa;
+  border-radius: 4px;
+  color: #3c4043;
+  cursor: pointer;
+  font-family: arial,sans-serif;
+  font-size: 14px;
+  height: 25px;
+  line-height: 27px;
+  min-width: 54px;
+  padding: 0 16px;
+  text-align: center;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: pre;
+  margin-top:5px
+}
+
+button:hover {
+  border-color: #dadce0;
+  box-shadow: rgba(0, 0, 0, .1) 0 1px 1px;
+  color: #202124;
+}
+
+button:focus {
+  border-color: #4285f4;
+  outline: none;
+}
+
+#input1, #input2, #input3 {
+
+}
